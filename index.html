@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Western University Earth Sciences Display Specimens - Prototype</title>
+    <title>Western University Earth Sciences Display Specimens</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,9 +12,9 @@
             <h1>Western University Earth Sciences</h1>
             <h2>Display Specimens Explorer</h2>
             <p class="prototype-banner">
-                <span class="badge">PROTOTYPE</span>
-                This is a pitch prototype showing public display specimens from the Dana and Suffel collections in the Biological and Geological Sciences building.
-                Data sourced from <a href="https://www.uwo.ca/earth/geocollections/resources/displays/index.html" target="_blank">public display pages</a> only.
+                <span class="badge">Prototype</span>
+                Dana &amp; Suffel collections from 
+                <a href="https://www.uwo.ca/earth/geocollections/resources/displays/index.html" target="_blank">public display pages</a>
             </p>
         </div>
     </header>
@@ -22,41 +22,44 @@
     <main>
         <section class="controls">
             <div class="search-box">
-                <input type="text" id="search" placeholder="Search by name, locality, or catalogue number..." aria-label="Search specimens">
+                <input type="text" id="search" placeholder="Search specimens..." aria-label="Search specimens">
                 <button id="clear-search" class="clear-btn" aria-label="Clear search">&times;</button>
             </div>
-            <div class="view-controls">
+            <div class="control-group">
                 <label>View:</label>
                 <button class="view-btn active" data-view="grid">Grid</button>
                 <button class="view-btn" data-view="list">List</button>
             </div>
-            <div class="group-controls">
-                <label for="group-by">Group by:</label>
+            <div class="control-group">
+                <label for="group-by">Group:</label>
                 <select id="group-by">
-                    <option value="none">No grouping</option>
-                    <option value="category">Display Category</option>
-                    <option value="collection">Collection (Dana/Suffel)</option>
-                    <option value="suggestedGroup">Mineral Family (suggested)</option>
+                    <option value="none">None</option>
+                    <option value="category">Category</option>
+                    <option value="collection">Collection</option>
+                    <option value="suggestedGroup">Mineral Family ⚠️</option>
                 </select>
             </div>
-            <div class="filter-controls">
-                <label for="filter-collection">Collection:</label>
+            <div class="control-group">
+                <label for="filter-collection">Filter:</label>
                 <select id="filter-collection">
-                    <option value="all">All Collections</option>
+                    <option value="all">All</option>
                     <option value="Dana">Dana</option>
                     <option value="Suffel">Suffel</option>
                     <option value="Paleontology">Paleontology</option>
                 </select>
             </div>
+            <button id="expand-collapse-all" class="expand-collapse-btn">
+                <span class="btn-icon">+</span> Expand All
+            </button>
         </section>
 
-        <section class="stats">
-            <span id="result-count">Loading...</span>
-        </section>
+        <div class="stats-bar">
+            <span id="result-count" class="stats">Loading...</span>
+        </div>
 
-        <section id="specimens-container" class="specimens-grid">
-            <!-- Specimens will be loaded here -->
-        </section>
+        <section id="specimens-container" class="specimens-grid"></section>
+        
+        <div id="pagination"></div>
     </main>
 
     <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -76,12 +79,11 @@
 
     <footer>
         <p>
-            <strong>Prototype Purpose:</strong> This demonstration shows a possible search and cluster interface for Western University's geocollections.
-            Intended for review by Alysha McNeil (geocollections) and Roberta Flemming.
+            <strong>Prototype</strong> for Alysha McNeil &amp; Roberta Flemming — 
+            showing ~45 items from public display pages, not the full 50,000+ specimen collection.
         </p>
         <p>
-            Data extracted from public display pages only &mdash; not representative of the full collection of 50,000+ specimens.
-            <span class="suggestion-note">Groups marked with ⚠️ are machine-suggested classifications, not confirmed taxonomy.</span>
+            <span class="suggestion-note">⚠️ indicates machine-suggested classification, not confirmed taxonomy.</span>
         </p>
         <p>
             <a href="https://www.uwo.ca/earth/geocollections/" target="_blank">Richard W. Hutchinson Geoscience Collaborative Suite</a>
