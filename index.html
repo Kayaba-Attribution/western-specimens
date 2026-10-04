@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Western University Earth Sciences Display Specimens - Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Western University Earth Sciences</h1>
+            <h2>Display Specimens Explorer</h2>
+            <p class="prototype-banner">
+                <span class="badge">PROTOTYPE</span>
+                This is a pitch prototype showing public display specimens from the Dana and Suffel collections in the Biological and Geological Sciences building.
+                Data sourced from <a href="https://www.uwo.ca/earth/geocollections/resources/displays/index.html" target="_blank">public display pages</a> only.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section class="controls">
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Search by name, locality, or catalogue number..." aria-label="Search specimens">
+                <button id="clear-search" class="clear-btn" aria-label="Clear search">&times;</button>
+            </div>
+            <div class="view-controls">
+                <label>View:</label>
+                <button class="view-btn active" data-view="grid">Grid</button>
+                <button class="view-btn" data-view="list">List</button>
+            </div>
+            <div class="group-controls">
+                <label for="group-by">Group by:</label>
+                <select id="group-by">
+                    <option value="none">No grouping</option>
+                    <option value="category">Display Category</option>
+                    <option value="collection">Collection (Dana/Suffel)</option>
+                    <option value="suggestedGroup">Mineral Family (suggested)</option>
+                </select>
+            </div>
+            <div class="filter-controls">
+                <label for="filter-collection">Collection:</label>
+                <select id="filter-collection">
+                    <option value="all">All Collections</option>
+                    <option value="Dana">Dana</option>
+                    <option value="Suffel">Suffel</option>
+                    <option value="Paleontology">Paleontology</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="stats">
+            <span id="result-count">Loading...</span>
+        </section>
+
+        <section id="specimens-container" class="specimens-grid">
+            <!-- Specimens will be loaded here -->
+        </section>
+    </main>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modal-image" src="" alt="">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-title"></h2>
+                    <div id="modal-info"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            <strong>Prototype Purpose:</strong> This demonstration shows a possible search and cluster interface for Western University's geocollections.
+            Intended for review by Alysha McNeil (geocollections) and Roberta Flemming.
+        </p>
+        <p>
+            Data extracted from public display pages only &mdash; not representative of the full collection of 50,000+ specimens.
+            <span class="suggestion-note">Groups marked with ⚠️ are machine-suggested classifications, not confirmed taxonomy.</span>
+        </p>
+        <p>
+            <a href="https://www.uwo.ca/earth/geocollections/" target="_blank">Richard W. Hutchinson Geoscience Collaborative Suite</a>
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
