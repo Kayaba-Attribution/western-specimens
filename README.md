@@ -41,9 +41,16 @@ All specimen data is extracted exclusively from these public display pages:
 
 ## How to Open
 
-### Option 1: GitHub Pages (if enabled)
+### Option 1: GitHub Pages
 
-Visit: `https://[username].github.io/[repository-name]/`
+To enable GitHub Pages:
+
+1. Go to the repository **Settings** → **Pages**
+2. Under "Source", select **Deploy from a branch**
+3. Choose the `main` branch and `/ (root)` folder
+4. Click **Save**
+
+Once enabled, visit: `https://[username].github.io/[repository-name]/`
 
 ### Option 2: Local File
 
