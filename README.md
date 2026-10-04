@@ -1,5 +1,7 @@
 # Western University Earth Sciences Display Specimens - Prototype
 
+> **Live Site:** https://kayaba-attribution.github.io/western-specimens/
+
 **This is a pitch prototype** demonstrating a potential search and cluster interface for the Western University geocollections. It is intended for review by **Alysha McNeil** (geocollections) and **Roberta Flemming**.
 
 ## What This Prototype Shows
@@ -41,16 +43,11 @@ All specimen data is extracted exclusively from these public display pages:
 
 ## How to Open
 
-### Option 1: GitHub Pages
+### Option 1: Live Site (GitHub Pages)
 
-To enable GitHub Pages:
+**https://kayaba-attribution.github.io/western-specimens/**
 
-1. Go to the repository **Settings** → **Pages**
-2. Under "Source", select **Deploy from a branch**
-3. Choose the `main` branch and `/ (root)` folder
-4. Click **Save**
-
-Once enabled, visit: `https://[username].github.io/[repository-name]/`
+The site is deployed automatically via GitHub Actions when changes are pushed to `main`.
 
 ### Option 2: Local File
 
